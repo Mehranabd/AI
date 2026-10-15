@@ -1,30 +1,14 @@
-# Cloud environment demo
+# HTML demo
 
-A tiny Python web application for testing development environment setup.
-Requires Python 3.10 or later; no packages, API keys, or external services needed.
+A standalone website with a button you can click. No Python, installation, API keys, or server required.
 
-## Run
+## Open the website
 
-```sh
-python3 app.py
-```
+1. Download this repository using GitHub's **Code → Download ZIP**.
+2. Extract the ZIP file.
+3. Double-click **index.html** to open it in your browser.
+4. Click **Say hello** to display a greeting.
 
-The server listens on port 8000 on the local machine. `/` returns a welcome page;
-`/health` returns `{"status": "ok"}`. Stop with Ctrl+C.
+Edit `index.html` in a text editor and refresh your browser to see changes.
 
-## Validate
-
-With the server running, execute:
-
-```sh
-python3 - <<'PY'
-import json
-from urllib.request import urlopen
-with urlopen('http://127.0.0.1:8000/') as response:
-    assert response.status == 200
-    assert b'It works!' in response.read()
-with urlopen('http://127.0.0.1:8000/health') as response:
-    assert json.load(response) == {'status': 'ok'}
-print('Both smoke checks passed')
-PY
-```
+The older `app.py` is an optional Python server demo and is not needed for this HTML page.
